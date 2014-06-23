@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8">
+	<title>New HTML page</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	
+
+	<script>
+		(function() {
+			var index,
+				length = 10;
+			for (index = 0; index < length; index++) {
+				setTimeout(function(specificIndex) {
+					console.log(specificIndex);
+				}(index), 100);
+			}
+		})();
+	</script>
+</body>
+</html>

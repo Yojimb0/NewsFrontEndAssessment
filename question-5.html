@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8">
+	<title>New HTML page</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	
+
+	<script>
+		(function() {
+			var array = [
+					function(callback) {
+						console.log('first function called in ' + (new Date().getTime() - timestamp) + 'ms');
+						callback();
+					},
+					function(callback) {
+						console.log('second function called in ' + (new Date().getTime() - timestamp) + 'ms');
+						callback();
+					},
+					function(callback) {
+						console.log('third function called in ' + (new Date().getTime() - timestamp) + 'ms');
+						callback();
+					}
+				],
+				timestamp = new Date().getTime();
+
+			function flow(array, callback) {
+
+				array[0]( function(){
+					array[1]( function(){
+						array[2]( function(){
+							callback();
+						});
+					});
+				});
+
+			};
+
+			flow(array, function() {
+				console.log('all functions finished in ' + (new Date().getTime() - timestamp) + 'ms');
+			});
+
+		})();
+	</script>
+
+</body>
+</html>

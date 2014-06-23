@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8">
+	<title>New HTML page</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	
+	<ul id="content"></ul>
+
+	<script>
+
+		(function() {
+			var html='',
+				element,
+				index,
+				length,
+				content = document.getElementById('content'),
+				data = [
+					{id: 1, name: 'John',   color: 'green'},
+					{id: 2, name: 'Sally',  color: 'pink'},
+					{id: 3, name: 'Andrew', color: 'blue'},
+					{id: 4, name: 'Katie',  color: 'purple'}
+				];
+			for (index = 0, length = data.length; index < length; index++) {
+				html += '<li id="'+data[index].id+'" style="color:'+data[index].color+'">';
+				html += '	<strong>' + data[index].name + '</strong>';
+				html += '</li>';
+			}
+
+			content.innerHTML = html;
+
+
+		})();
+
+	</script>
+
+</body>
+</html>

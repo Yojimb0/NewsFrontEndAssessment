@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8">
+	<title>New HTML page</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	
+
+	<script>
+
+		(function() {
+			function makeMyArrayUpperCaseItsUselessButHeyItWorks(array){
+				var l = array.length;
+				for(var i=0; i<l; i++){
+					array[i] = array[i].toUpperCase();
+				}
+				return array;
+			}
+
+			function isArray(array, callback) {
+				var returnValue = typeof(array) === 'object' && (array instanceof Array);
+
+				// If falsy, we return it right away.
+				if(!returnValue) return returnValue;
+
+				// Is the callback a function ?
+				if(typeof callback === 'function'){
+					return callback(array);
+				}else{
+					return returnValue;
+				}
+				
+			}
+			
+			console.log(isArray('a'));
+			console.log(isArray('a', makeMyArrayUpperCaseItsUselessButHeyItWorks));
+			console.log(isArray(['item1','item2','item3']));
+			console.log(isArray(['item1','item2','item3'], makeMyArrayUpperCaseItsUselessButHeyItWorks));
+
+		})();
+
+	</script>
+
+</body>
+</html>

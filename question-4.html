@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8">
+	<title>New HTML page</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	
+
+	<script>
+		function hello(name, age) {
+			var msg = name + ", who is " + age + " years old, says hi!";
+
+			return function sayHello() {
+				console.log(msg);
+			};
+		}
+
+		// Creating the closure
+		var sayHelloToJohn = hello("John", 33);
+
+		sayHelloToJohn();
+	</script>
+
+</body>
+</html>

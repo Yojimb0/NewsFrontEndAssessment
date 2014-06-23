@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8">
+	<title>New HTML page</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<style>
+		#box1, #box2, #box3{padding:20px;border: 1px solid papayawhip;}
+	</style>
+</head>
+<body>
+	
+	<div id="box1">
+		<div id="box2">
+			<div id="box3">
+				<img src="http://mrwgifs.com/wp-content/uploads/2013/12/Brad-Pitt-Needs-To-Know-Whats-In-The-Box-In-Sevens-Dramatic-Final-Scene-Gif.gif" alt="">
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<script>
+
+(function() {
+	var boxes = [
+		document.getElementById("box1"),
+		document.getElementById("box2"),
+		document.getElementById("box3")
+	];
+
+	boxes[0].addEventListener("mousemove", function(event) {
+		console.log("Box 1");
+		event.stopPropagation();
+	});
+
+	boxes[1].addEventListener("mousemove", function(event) {
+		console.log("Box 2");
+		event.stopPropagation();
+	});
+
+	boxes[2].addEventListener("mousemove", function(event) {
+		console.log("Box 3");
+		event.stopPropagation();
+	});
+
+})();
+
+
+
+	</script>
+
+</body>
+</html>

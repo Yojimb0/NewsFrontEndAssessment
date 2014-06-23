@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+	<meta charset="utf-8">
+	<title>New HTML page</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	
+	<div class="test">Hello</div>
+	<div class="test">World</div>
+
+	<script>
+
+		(function(window) {
+
+			/* API
+			---------------------------------------*/
+			var document = window.document;
+
+			function myWrapper(selector){
+				this.selector = selector;
+				this.element = document.querySelectorAll(selector);
+			}
+
+			myWrapper.prototype = {
+				show: function(){
+					var array = Array.prototype.slice.call(this.element, 0);
+					array.forEach(function(node) {
+						node.style.display = 'block';
+					});
+					return this;
+				},
+				hide: function(){
+					var array = Array.prototype.slice.call(this.element, 0);
+					array.forEach(function(node) {
+						node.style.display = 'none';
+					});
+					return this;
+				},
+				blue: function(){
+					var array = Array.prototype.slice.call(this.element, 0);
+					array.forEach(function(node) {
+						node.style.color = 'blue';
+					});
+					return this;
+				}
+			}
+
+			window.$ = function(selector){
+				return new myWrapper(selector);
+			}
+
+			/* USAGE
+			---------------------------------------*/
+			$('.test').hide().show().blue();
+
+		})(window);
+
+
+	</script>
+
+</body>
+</html>
